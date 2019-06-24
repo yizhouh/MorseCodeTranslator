@@ -8,14 +8,33 @@ namespace MorseCodeTranslator
         {
             while (true)
             {
-                Console.Write(":");
-                string input = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(input))
+                Console.WriteLine("Enter 1 to morse, enter 2 to demorse");
+                string option = Console.ReadLine();
+
+                if(option == "1")
                 {
-                    break;
+                    Console.Write(":");
+                    string input = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(input))
+                    {
+                        break;
+                    }
+                    string output = MorseCodeTranslator.ToMorse(input);
+                    Console.WriteLine(output);
                 }
-                string output = MorseCodeTranslator.ToMorse(input);
-                Console.WriteLine(output);
+                else if(option == "2")
+                {
+                    Console.Write(":");
+                    string input = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(input))
+                    {
+                        break;
+                    }
+                    string output = MorseCodeTranslator.DeMorse(input);
+                    Console.WriteLine(output);
+                }
+
+
 
             }
         }

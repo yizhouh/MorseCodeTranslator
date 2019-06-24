@@ -100,6 +100,27 @@ namespace MorseCodeTranslator
 
         }
 
+        public static string DeMorse(string input)
+        {
+            string result = "";
+            string[] word = input.Split(" ");
+            foreach (var code in word)
+            {
+                try
+                {
+                    char letter = _morseToText[code];
+                    result += letter;
+                }
+                catch(KeyNotFoundException)
+                {
+                    result += "/!";
+                }
+
+            }
+
+            return result;
+        }
+
 
     }
 }
